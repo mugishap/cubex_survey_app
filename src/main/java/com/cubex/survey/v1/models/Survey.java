@@ -38,6 +38,9 @@ public class Survey {
     @OneToMany()
     private List<Question> questions;
 
+    @OneToMany()
+    private List<Response> responses;
+
     public Survey(String name, String description, String image, User user, ESurveyStatus status, List<Question> questions) {
         this.name = name;
         this.description = description;

@@ -3,6 +3,8 @@ package com.cubex.survey.v1.models;
 import jakarta.persistence.*;
 import lombok.Cleanup;
 
+import java.util.List;
+
 @Entity
 public class Choice {
 
@@ -15,5 +17,8 @@ public class Choice {
 
     @ManyToOne()
     private Question question;
+
+    @OneToMany()
+    private List<Response> responses;
 
 }

@@ -24,4 +24,7 @@ public class Question {
     @ManyToOne()
     private Survey survey;
 
+    @OneToMany()
+    private List<Response> responses;
+
 }

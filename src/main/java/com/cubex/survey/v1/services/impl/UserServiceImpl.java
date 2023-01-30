@@ -3,17 +3,22 @@ package com.cubex.survey.v1.services.impl;
 import com.cubex.survey.v1.models.User;
 import com.cubex.survey.v1.repositories.IUserRepository;
 import com.cubex.survey.v1.services.IUserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
+@Slf4j
 public class UserServiceImpl implements IUserService {
 
     @Autowired
     private IUserRepository userRepository;
 
+
     @Override
     public User createUser(User user) {
+        log.debug("Creating new user");
         return this.userRepository.save(user);
     }
 

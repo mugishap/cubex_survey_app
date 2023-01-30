@@ -16,7 +16,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/api/v1/user")
-@Api(value = "User Controller", description = "User Controller")
+@Api(value = "User Controller", description = "User Controller", tags = "User Controller", produces = "application/json", consumes = "application/json")
 public class UserController {
 
     @Autowired

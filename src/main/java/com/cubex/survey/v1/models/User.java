@@ -19,16 +19,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column()
+    @Column(nullable = false,unique = true)
     private String names;
 
-    @Column()
+    @Column(nullable = false)
     private String email;
 
-    @Column()
     private String profileImage;
 
-    @Column()
+    @Column(nullable = false)
     private String password;
 
     @OneToMany()
