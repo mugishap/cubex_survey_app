@@ -5,7 +5,7 @@ import com.cubex.survey.v1.services.ISurveyService;
 
 import java.util.List;
 
-public class SurveyService implements ISurveyService {
+public class SurveyServiceImpl implements ISurveyService {
     @Override
     public Survey createSurvey(Survey survey) {
         return null;

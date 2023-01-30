@@ -1,7 +1,17 @@
 package com.cubex.survey.v1.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.util.List;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class User {
 
@@ -21,4 +31,13 @@ public class User {
     @Column()
     private String password;
 
+    @OneToMany()
+    private List<Survey> surveys;
+
+    public User(String names, String email, String profileImage, String password) {
+        this.names = names;
+        this.email = email;
+        this.profileImage = profileImage;
+        this.password = password;
+    }
 }
