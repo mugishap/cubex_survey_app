@@ -58,7 +58,5 @@ public class UserController {
     public ResponseEntity<ApiResponse> getUserBySurveyId(@PathVariable(value = "id") int id) {
         return ResponseEntity.ok().body(new ApiResponse(true, "User fetched successfully", this.userService.getUserBySurveyId(id)));
     }
-
-
 }
 
