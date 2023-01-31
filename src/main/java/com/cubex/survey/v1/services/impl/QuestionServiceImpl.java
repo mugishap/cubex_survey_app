@@ -1,9 +1,7 @@
 package com.cubex.survey.v1.services.impl;
 
-import com.cubex.survey.v1.models.Choice;
 import com.cubex.survey.v1.models.Question;
 import com.cubex.survey.v1.models.Survey;
-import com.cubex.survey.v1.repositories.IChoiceRepository;
 import com.cubex.survey.v1.repositories.IQuestionRepository;
 import com.cubex.survey.v1.services.IQuestionService;
 import lombok.extern.slf4j.Slf4j;
@@ -21,12 +19,6 @@ public class QuestionServiceImpl implements IQuestionService {
 
     @Autowired
     private SurveyServiceImpl surveyService;
-
-    @Autowired
-    private QuestionServiceImpl questionService;
-
-    @Autowired
-    private IChoiceRepository choiceRepository;
 
     @Override
     public Question createQuestion(Question question) {
@@ -57,14 +49,13 @@ public class QuestionServiceImpl implements IQuestionService {
 
     @Override
     public List<Question> saveMultipleQuestions(int surveyId, List<Question> questions) {
-        questions.forEach(q -> {
+        questions.forEach(q->{
             System.out.println(q.getQuestion());
             System.out.println(q.getSurvey().getUser().getEmail());
         });
         for (Question question : questions) {
             Survey survey = surveyService.getSurvey(surveyId);
             question.setSurvey(survey);
-
         }
         return this.questionRepository.saveAll(questions);
     }

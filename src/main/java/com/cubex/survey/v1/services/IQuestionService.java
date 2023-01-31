@@ -1,6 +1,5 @@
 package com.cubex.survey.v1.services;
 
-import com.cubex.survey.v1.models.Choice;
 import com.cubex.survey.v1.models.Question;
 
 import java.util.List;
@@ -19,6 +18,6 @@ public interface IQuestionService {
 
     public List<Question> saveMultipleQuestions(int surveyId, List<Question> questions);
 
-//    public Question addChoices(int questionId, List<Choice> choices);
+
 
 }
