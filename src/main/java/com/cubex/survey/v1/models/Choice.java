@@ -1,10 +1,14 @@
 package com.cubex.survey.v1.models;
 
 import jakarta.persistence.*;
-import lombok.Cleanup;
+import lombok.*;
 
 import java.util.List;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Choice {
 
